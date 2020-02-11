@@ -1,0 +1,9 @@
+삼성 익스퍼트 아카데미 홈페이지의 input 파일, output 파일을 쉽게 복사하는 plugin
+https://chrome.google.com/webstore/detail/samsung-expert-academy-ex/fpjlgclniclpcfmmhgpfldppfailoeae
+
+swea, 백준에 제출시 
+패키지 지우고 클래스이름을 Solution또는 Main으로 변경해주는 Plugin
+https://chrome.google.com/webstore/detail/submitjava/jamfbhbmmopcmncgnapfifjiimomgpfp
+
+백준 문제 레벨을 보여주는  plugin
+https://chrome.google.com/webstore/detail/solvedac/anenheoccfogllpbpcmbbpcbjpogeehe
