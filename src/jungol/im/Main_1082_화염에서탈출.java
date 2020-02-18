@@ -13,12 +13,15 @@ public class Main_1082_화염에서탈출 {
 	static int C;
 	static char[][] map;
 	static boolean[][] visit;
+	static boolean[][] fvisit;
 	static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 	static int rD;
 	static int cD;
 	static int srS;
 	static int scS;
 	static int min;
+	static int t;
+	static String result;
 	static LinkedList<int[]> fireQ = new LinkedList<>();
 	static LinkedList<int[]> sQ = new LinkedList<>();
 	
@@ -34,8 +37,10 @@ public class Main_1082_화염에서탈출 {
 			R = Integer.parseInt(st.nextToken());
 			C = Integer.parseInt(st.nextToken());
 			map = new char[R][C];
-			int t=0;
-			String result="impossible";
+			visit = new boolean[R][C];
+			fvisit = new boolean[R][C];
+			t = 0;
+			result = "impossible";
 //			min = 
 			for (int i = 0; i < R; i++) {
 				String str = br.readLine();
@@ -49,6 +54,7 @@ public class Main_1082_화염에서탈출 {
 						rD = i;
 						cD = j;
 					}else if(map[i][j]=='*') {
+						fvisit[i][j] = true;
 						fireQ.offer(new int[] {i,j});
 					}
 				}
@@ -72,7 +78,63 @@ public class Main_1082_화염에서탈출 {
 	
 	private static void bfs() {
 		
+		visit[srS][scS] = true;
 		
+		int[] cur;
+		int[] fcur;
+		int nr, nc, r, c;
+		int fnr, fnc, fr, fc;
+		while(!fireQ.isEmpty() || !sQ.isEmpty()) {
+			
+			// fire
+			System.out.println("fire move");
+			int qsize = fireQ.size();
+			for (int n = 0; n < qsize; n++) {
+				fcur = fireQ.poll();
+				fr = fcur[0];
+				fc = fcur[1];
+				
+				for (int d = 0; d < 4; d++) {
+					fnr = fr + dir[d][0];
+					fnc = fc + dir[d][1];
+					
+//					char tmp = map[fnr][fnc];
+					if(fnr>-1 && fnr<R && fnc>-1 && fnc<C ) {
+						if(map[fnr][fnc]=='.') {
+							map[fnr][fnc] = '*';
+							fvisit[fnr][fnc] = true;
+							fireQ.offer(new int[] {fnr, fnc});
+						} 
+//						else if()
+					}
+				}
+			}
+			print();
+			// S move
+			System.out.println("S move");
+			cur = sQ.poll();
+//			System.out.println(cur[0]);
+			r = cur[0];
+			c = cur[1];
+			for (int d = 0; d < 4; d++) {
+				nr = r + dir[d][0];
+				nc = c + dir[d][1];
+//				char tmp = map[nr][nc];
+				if(nr>-1 && nr<R && nc>-1 && nc<C && (map[nr][nc]=='.'||map[nr][nc]=='D')) {
+					if(map[nr][nc]=='.') {
+//						map[r][c] = '.';
+//						map[nr][nc] = 'S';
+						visit[nr][nc] = true;
+						sQ.offer(new int[] {nr,nc,t+1});
+					}else if(map[nr][nc]=='D') {
+						result = (t+1)+"";
+						return;
+					}
+				}
+			}
+			print();
+//			return;
+		}
 		
 	}
 
