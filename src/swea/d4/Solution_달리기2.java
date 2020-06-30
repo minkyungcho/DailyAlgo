@@ -22,27 +22,27 @@ public class Solution_달리기2 {
 				s = sc.nextInt()-1;
 				needs[f] |= (1<<s);
 			}
-			long r = dfs(0);
+//			long r = dfs(0);
 			
 			System.out.println("#"+t+" "+count);
 		}
 		
 	}
 
-	private static long dfs(int flag) {
-		if(flag==(1<<N)-1) {
-			//count++;
-			return 1;
-		}
-		for (int i = 0; i < N; i++) {
-			if((flag & 1<<i)==0) {
-				if((flag & needs[i])==needs[i]) {
-					count += dfs(flag | 1<<i);
-				}
-			}
-		}
-		
-		
-	}
+//	private static long dfs(int flag) {
+//		if(flag==(1<<N)-1) {
+//			//count++;
+//			return 1;
+//		}
+//		for (int i = 0; i < N; i++) {
+//			if((flag & 1<<i)==0) {
+//				if((flag & needs[i])==needs[i]) {
+//					count += dfs(flag | 1<<i);
+//				}
+//			}
+//		}
+//		
+//		
+//	}
 
 }

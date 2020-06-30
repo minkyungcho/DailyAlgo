@@ -13,20 +13,19 @@ public class R04_HanoiTest {
 		hanoi(N, 1, 2, 3);
 		System.out.println(result.toString());
 		
-		
 	}
 	
 	private static void hanoi(int cnt, int from, int temp, int to) {
-		
+					// 원판갯수(맨아래원판번호), 시작기둥,  임시기둥,  목적기둥
 		if(cnt==0) return;
 		
 		// 시작기둥의 cnt-1 덩어리 원판을 임시기둥으로 옮김.
 		hanoi(cnt-1, from, to, temp);
 		
-		// 시작기둥의 cnt원한 목적기둥으로 옮김.
+		// 시작기둥의 cnt원판 목적기둥으로 옮김.
 		result.append(cnt+" : "+from+"->"+to+"\n");
-		
-		// 
+		 
+		// 임시기둥의 cnt-1 덩어리 원판을 목적기둥으로 옮김.
 		hanoi(cnt-1, temp, from, to);
 	}
 	

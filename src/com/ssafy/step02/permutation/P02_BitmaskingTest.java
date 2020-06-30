@@ -12,7 +12,7 @@ public class P02_BitmaskingTest {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		N = sc.nextInt();
+		N = sc.nextInt(); // 2~10개 
 		R = sc.nextInt();
 		input = new int[N];
 		number = new int[R];

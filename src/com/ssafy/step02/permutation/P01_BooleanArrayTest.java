@@ -13,6 +13,7 @@ public class P01_BooleanArrayTest {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
+		// N개 중에서 R개 뽑자.
 		N = sc.nextInt();
 		R = sc.nextInt();
 		input = new int[N];
@@ -25,6 +26,29 @@ public class P01_BooleanArrayTest {
 		
 		permutation(0);
 		System.out.println("총 경우의 수 : "+totalCnt);
+		/*
+		 * 	3 2
+		 * 	1 2 3
+		 * 	-----
+		 * 	[1, 2]
+			[1, 3]
+			[2, 1]
+			[2, 3]
+			[3, 1]
+			[3, 2]
+			총 경우의 수 : 6
+			
+			3 3
+			1 2 3
+			------
+			[1, 2, 3]
+			[1, 3, 2]
+			[2, 1, 3]
+			[2, 3, 1]
+			[3, 1, 2]
+			[3, 2, 1]
+			총 경우의 수 : 6
+ 		 */
 	}
 	
 	private static void permutation(int cnt) { // cnt : 순열을 뽑는 자리 
