@@ -2,13 +2,10 @@ package swea.d3;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
-
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 public class Solution_d3_1228_암호문1 {
 
