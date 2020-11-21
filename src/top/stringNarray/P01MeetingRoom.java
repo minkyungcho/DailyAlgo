@@ -42,9 +42,11 @@ public class P01MeetingRoom {
 //		print(intervals); // 15 5 0
 		
 		// 1. sorting
-		Arrays.sort(intervals, Comp);
+//		Arrays.sort(intervals, Comp);
+		
+		Arrays.sort(intervals, (a,b)-> a.start - b.start);
 //		System.out.println("===============");
-//		print(intervals); // 0 5 15
+		print(intervals); // 0 5 15
 		
 		// 2. hold.end > cur.start
 		for (int i = 1; i < intervals.length; i++) {
@@ -62,6 +64,7 @@ public class P01MeetingRoom {
 		public int compare(Interval o1, Interval o2) {
 			// 오름차순 
 			return o1.start - o2.start;
+//			return o2.start - o1.start;
 		}
 		
 	};

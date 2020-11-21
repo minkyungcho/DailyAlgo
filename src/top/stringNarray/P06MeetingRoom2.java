@@ -42,6 +42,7 @@ public class P06MeetingRoom2 {
 		// start 기준  sort
 		Arrays.sort(intervals, (a,b) -> (a.start-b.start));
 		
+//		a[1]-b[1]
 		Queue<Interval> minHeap = new PriorityQueue<>(intervals.length, (a,b) -> (a.end-b.end));
 
 		int max = 0;
